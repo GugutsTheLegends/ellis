@@ -1,0 +1,18 @@
+
+services:
+  # Serviço da sua aplicação principal
+  app:
+    # Constrói a imagem a partir do Dockerfile no diretório atual ('.')
+    build: .
+    # Define o nome do contêiner para fácil identificação
+    container_name: nome-da-sua-imagem
+    # Expõe a porta 8000 do contêiner para a porta 8000 da sua máquina
+    ports:
+      - "8000:8000"
+    # Monta o diretório atual dentro do contêiner para que as alterações no código
+    # sejam refletidas em tempo real, o que é ótimo para desenvolvimento.
+    volumes:
+      - .:/app
+    # Carrega variáveis de ambiente a partir do arquivo .env (opcional)
+    
+
